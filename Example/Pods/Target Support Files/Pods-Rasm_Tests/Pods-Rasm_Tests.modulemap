@@ -1,0 +1,6 @@
+framework module Pods_Rasm_Tests {
+  umbrella header "Pods-Rasm_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

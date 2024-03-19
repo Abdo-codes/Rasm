@@ -1,0 +1,16 @@
+PODS:
+  - Rasm (0.1.0)
+
+DEPENDENCIES:
+  - Rasm (from `../`)
+
+EXTERNAL SOURCES:
+  Rasm:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Rasm: 347b74d7ca387dc8d44b869027569f8980573618
+
+PODFILE CHECKSUM: 5e1a3fa3ef77612abb6725e64e5915dc5610c734
+
+COCOAPODS: 1.14.3
