@@ -1,23 +1,18 @@
-//
-//  GhostButtonStyle.swift
-//  MedicalApp
-//
-//  Created by MahmoudFares on 14/11/2023.
-//
 
 import SwiftUI
 
 public struct GhostButtonStyle: CustomButtonStyle {
     var foregroundColor: Color
     var onFocusColor: Color
-    var isDisable: Bool
+    var disbaleColor: Color
+    public var isDisabled: Bool
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(10)
             .foregroundColor(
-                isDisable
-                    ? Color.gray
+                isDisabled
+                    ? disbaleColor
                     : configuration.isPressed
                     ? onFocusColor
                     : foregroundColor

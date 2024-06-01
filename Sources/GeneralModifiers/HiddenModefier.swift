@@ -1,9 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by MahmoudFares on 19/03/2024.
-//
 
 import Foundation
 import SwiftUI
@@ -21,5 +15,18 @@ public struct ConditionalHiddenModifier: ViewModifier {
 public extension View {
     func hiddenIf(_ condition: Bool) -> some View {
         modifier(ConditionalHiddenModifier(isHidden: condition))
+    }
+}
+
+
+public extension View {
+    var toUIView: UIView {
+        let view = self
+        let vc = UIHostingController(rootView: view)
+        guard let uiView = vc.view else {
+            debugPrint("Can't find UIView")
+            return UIView()
+        }
+        return uiView
     }
 }

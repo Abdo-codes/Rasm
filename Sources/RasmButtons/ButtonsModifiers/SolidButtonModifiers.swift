@@ -11,16 +11,17 @@ public struct SolidButtonStyle: CustomButtonStyle {
     var backgroundColor: Color
     var onFocusColor: Color
     var foreground: Color
+    var disableColor: Color
     var cornerRadius: CGFloat
-    var isDisable: Bool
+    public var isDisabled: Bool
 
     public func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding(10)
             .foregroundColor(foreground)
             .background(
-                isDisable
-                    ? Color.gray
+                isDisabled
+                    ? disableColor
                     : configuration.isPressed
                     ? onFocusColor
                     : backgroundColor
