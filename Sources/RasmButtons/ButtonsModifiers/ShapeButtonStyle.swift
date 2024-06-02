@@ -1,16 +1,18 @@
 import SwiftUI
 
-public enum ButtonShape {
+public enum ButtonShape: Equatable {
     case circle
     case roundedRectangle(cornerRadius: CGFloat)
     case capsule
     case rectangle
+    case ghost
 }
 
 public enum ButtonStyleType {
-    case fill(Color)
-    case border(Color, lineWidth: CGFloat)
-    case dottedBorder(Color, lineWidth: CGFloat, dash: [CGFloat])
+    case fill(Color, disbaledColor: Color)
+    case border(Color, disbaledColor: Color,  lineWidth: CGFloat)
+    case dottedBorder(Color, disbaledColor: Color, lineWidth: CGFloat, dash: [CGFloat])
+    case ghost
 }
 
 public struct ShapeButtonStyle: CustomButtonStyle {
@@ -37,12 +39,20 @@ public struct ShapeButtonStyle: CustomButtonStyle {
         self.isDisabled = isDisabled
     }
     
+
     public func makeBody(configuration: Configuration) -> some View {
         ZStack {
             backgroundView(isPressed: configuration.isPressed)
             configuration.label
                 .padding(10)
                 .disabled(isDisabled)
+                .foregroundStyle(
+                    isDisabled
+                        ? disableColor
+                    : (configuration.isPressed && shape == .ghost)
+                        ? onFocusColor
+                        : foregroundColor
+                )
                 .animation(.easeInOut, value: configuration.isPressed)
         }
         .foregroundColor(isDisabled ? disableColor : foregroundColor)
@@ -59,76 +69,86 @@ public struct ShapeButtonStyle: CustomButtonStyle {
             createCapsule(isPressed: isPressed)
         case .rectangle:
             createRectangle(isPressed: isPressed)
+        case .ghost:
+            EmptyView()
         }
     }
 
     @ViewBuilder
     private func createCircle(isPressed: Bool) -> some View {
             switch style {
-            case .fill(let color):
+            case .fill(let color, let disabledColor):
                 Circle()
                     .fill(
                         isDisabled
-                        ? disableColor
+                        ? disabledColor
                         : (isPressed ? onFocusColor : color)
                     )
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-            case .border(let color, let lineWidth):
+            case .border(let color, let disbaledColor, let lineWidth):
                 Circle()
                     .stroke(
-                        isDisabled ? disableColor : (isPressed ? onFocusColor : color),
+                        isDisabled ? disbaledColor : (isPressed ? onFocusColor : color),
                         lineWidth: lineWidth
                     )
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-            case .dottedBorder(let color, let lineWidth, let dash):
+            case .dottedBorder(let color, let disbaledColor ,let lineWidth, let dash):
                 Circle()
                     .stroke(
                         style: StrokeStyle(lineWidth: lineWidth, dash: dash)
                     )
                     .foregroundColor(isDisabled ? disableColor : (isPressed ? onFocusColor : color))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+            case .ghost:
+                EmptyView()
             }
     }
 
     @ViewBuilder
     private func createRoundedRectangle(cornerRadius: CGFloat, isPressed: Bool) -> some View {
         switch style {
-        case .fill(let color):
+        case .fill(let color, let disbaledColor):
             RoundedRectangle(cornerRadius: cornerRadius)
-                .fill(isDisabled ? disableColor : (isPressed ? onFocusColor : color))
-        case .border(let color, let lineWidth):
+                .fill(isDisabled ? disbaledColor : (isPressed ? onFocusColor : color))
+        case .border(let color, let disbaledColor ,let lineWidth):
             RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(isDisabled ? disableColor : (isPressed ? onFocusColor : color), lineWidth: lineWidth)
-        case .dottedBorder(let color, let lineWidth, let dash):
+                .stroke(isDisabled ? disbaledColor : (isPressed ? onFocusColor : color), lineWidth: lineWidth)
+        case .dottedBorder(let color, let disbaledColor ,let lineWidth, let dash):
             RoundedRectangle(cornerRadius: cornerRadius)
                 .stroke(style: StrokeStyle(lineWidth: lineWidth, dash: dash))
-                .foregroundColor(isDisabled ? disableColor : (isPressed ? onFocusColor : color))
+                .foregroundColor(isDisabled ? disbaledColor : (isPressed ? onFocusColor : color))
+        case .ghost:
+            EmptyView()
         }
     }
 
     @ViewBuilder
     private func createCapsule(isPressed: Bool) -> some View {
         switch style {
-        case .fill(let color):
-            Capsule().fill(isDisabled ? disableColor : (isPressed ? onFocusColor : color))
-        case .border(let color, let lineWidth):
-            Capsule().stroke(isDisabled ? disableColor : (isPressed ? onFocusColor : color), lineWidth: lineWidth)
-        case .dottedBorder(let color, let lineWidth, let dash):
+        case .fill(let color, let disbaledColor):
+            Capsule().fill(isDisabled ? disbaledColor : (isPressed ? onFocusColor : color))
+        case .border(let color, let disbaledColor, let lineWidth):
+            Capsule().stroke(isDisabled ? disbaledColor : (isPressed ? onFocusColor : color), lineWidth: lineWidth)
+        case .dottedBorder(let color, let disbaledColor, let lineWidth, let dash):
             Capsule().stroke(style: StrokeStyle(lineWidth: lineWidth, dash: dash))
-                .foregroundColor(isDisabled ? disableColor : (isPressed ? onFocusColor : color))
+                .foregroundColor(isDisabled ? disbaledColor : (isPressed ? onFocusColor : color))
+        case .ghost:
+            EmptyView()
         }
     }
 
     @ViewBuilder
     private func createRectangle(isPressed: Bool) -> some View {
         switch style {
-        case .fill(let color):
-            Rectangle().fill(isDisabled ? color.opacity(0.5) : (isPressed ? onFocusColor : color))
-        case .border(let color, let lineWidth):
-            Rectangle().stroke(isDisabled ? color.opacity(0.5) : (isPressed ? onFocusColor : color), lineWidth: lineWidth)
-        case .dottedBorder(let color, let lineWidth, let dash):
+        case .fill(let color, let disbaledColor):
+            Rectangle().fill(isDisabled ? disbaledColor : (isPressed ? onFocusColor : color))
+        case .border(let color, let disbaledColor, let lineWidth):
+            Rectangle().stroke(isDisabled ? disbaledColor : (isPressed ? onFocusColor : color), lineWidth: lineWidth)
+        case .dottedBorder(let color, let disbaledColor, let lineWidth, let dash):
             Rectangle().stroke(style: StrokeStyle(lineWidth: lineWidth, dash: dash))
-                .foregroundColor(isDisabled ? color.opacity(0.5) : (isPressed ? onFocusColor : color))
+                .foregroundColor(isDisabled ? disbaledColor : (isPressed ? onFocusColor : color))
+        case .ghost:
+            EmptyView()
         }
     }
 }
