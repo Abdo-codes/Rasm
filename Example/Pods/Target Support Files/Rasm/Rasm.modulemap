@@ -1,6 +1,0 @@
-framework module Rasm {
-  umbrella header "Rasm-umbrella.h"
-
-  export *
-  module * { export * }
-}

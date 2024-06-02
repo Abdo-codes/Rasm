@@ -3,22 +3,40 @@
 
 import PackageDescription
 
+private let PACKAGE_NAME = "Rasm"
+private let BUTTONS_TARGET_NAME = PACKAGE_NAME + "Buttons"
+private let MODIFIERS_TARGET_NAME = PACKAGE_NAME + "Modifiers"
+private let UMBRELLA_TARGET_NAME = PACKAGE_NAME
+
 let package = Package(
-    name: "Rasm",
+    name: PACKAGE_NAME,
     platforms: [.iOS(.v15)],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "Rasm",
-            targets: ["Rasm"]),
+            name: PACKAGE_NAME,
+            targets: [
+                UMBRELLA_TARGET_NAME
+            ]
+        ),
+    ],
+    dependencies: [
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "Rasm"),
-        .testTarget(
-            name: "RasmTests",
-            dependencies: ["Rasm"]),
+            name: MODIFIERS_TARGET_NAME
+        ),
+        .target(
+            name: BUTTONS_TARGET_NAME,
+            dependencies: [
+                .target(name: MODIFIERS_TARGET_NAME),
+            ]
+        ),
+        .target(
+            name: UMBRELLA_TARGET_NAME,
+            dependencies: [
+                .target(name: MODIFIERS_TARGET_NAME),
+                .target(name: BUTTONS_TARGET_NAME),
+            ]
+        )
     ]
 )
