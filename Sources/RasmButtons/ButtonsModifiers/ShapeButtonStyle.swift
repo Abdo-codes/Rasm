@@ -97,7 +97,7 @@ public struct ShapeButtonStyle: CustomButtonStyle {
                     .stroke(
                         style: StrokeStyle(lineWidth: lineWidth, dash: dash)
                     )
-                    .foregroundColor(isDisabled ? disableColor : (isPressed ? onFocusColor : color))
+                    .foregroundColor(isDisabled ? disbaledColor : (isPressed ? onFocusColor : color))
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             case .ghost:
                 EmptyView()

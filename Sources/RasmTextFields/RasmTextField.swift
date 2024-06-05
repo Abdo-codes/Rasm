@@ -5,7 +5,7 @@
 //  Created by MahmoudFares on 01/06/2024.
 //
 
-enum TextFieldStyleType {
+public enum TextFieldStyleType {
     case roundedRectangle(cornerRadius: CGFloat, borderColor: Color, borderWidth: CGFloat)
     case rectangle(borderColor: Color, borderWidth: CGFloat)
     case noBorder
@@ -14,7 +14,7 @@ enum TextFieldStyleType {
 
 import SwiftUI
 
-struct CustomTextField: View {
+public struct CustomTextField: View {
     @Binding var text: String
     var placeholder: String
     var style: TextFieldStyleType
@@ -23,7 +23,24 @@ struct CustomTextField: View {
     var error: Bool = false
     var errorColor: Color = .red
     @FocusState var isFocus: Bool
-    var body: some View {
+    public init(
+        text: Binding<String>,
+        placeholder: String,
+        style: TextFieldStyleType,
+        leadingImage: Image? = nil,
+        trailingImage: Image? = nil,
+        error: Bool = false,
+        errorColor: Color = .red
+    ) {
+        self._text = text
+        self.placeholder = placeholder
+        self.style = style
+        self.leadingImage = leadingImage
+        self.trailingImage = trailingImage
+        self.error = error
+        self.errorColor = errorColor
+    }
+    public var body: some View {
         HStack {
             if let leadingImage = leadingImage {
                 leadingImage
@@ -61,17 +78,31 @@ struct CustomTextField: View {
         switch style {
         case .roundedRectangle(let cornerRadius, let borderColor, let borderWidth):
             RoundedRectangle(cornerRadius: cornerRadius)
-                .stroke(error ? errorColor : borderColor, lineWidth: borderWidth)
+                .stroke(
+                    (
+                        error && !isFocus && !text.isEmpty
+                    ) ? errorColor : borderColor,
+                    lineWidth: borderWidth
+                )
         case .rectangle(let borderColor, let borderWidth):
             Rectangle()
-                .stroke(error ? errorColor : borderColor, lineWidth: borderWidth)
+                .stroke(
+                    (
+                        error && !isFocus && !text.isEmpty
+                    ) ? errorColor : borderColor,
+                    lineWidth: borderWidth
+                )
         case .noBorder:
             EmptyView()
         case .singleLine(let borderColor, let borderWidth):
             VStack {
                 Spacer()
                 Rectangle()
-                    .fill(error ? errorColor : borderColor)
+                    .fill(
+                        (
+                            error && !isFocus && !text.isEmpty
+                        ) ? errorColor : borderColor
+                    )
                     .frame(height: borderWidth)
             }
         }
@@ -122,7 +153,7 @@ struct CustomTextField: View {
             error: hasError,
             errorColor: .red
         )
-        
+       FloatingLabelTextField(placeholder: "swswswswsw")
         Button("Toggle Error") {
             hasError.toggle()
         }
@@ -133,4 +164,41 @@ struct CustomTextField: View {
     }
     .padding()
 
+}
+struct FloatingLabelTextField: View {
+    @State private var text: String = ""
+    @State private var isEditing: Bool = false
+    @FocusState private var isFocus: Bool
+    var placeholder: String
+
+    var body: some View {
+        ZStack(alignment: .leading) {
+            Text(placeholder)
+                .foregroundColor(isEditing || !text.isEmpty ? .accentColor : .gray)
+                .background(Color.white)
+                .offset(y: isEditing || !text.isEmpty ? -25 : 0)
+                .scaleEffect(isEditing || !text.isEmpty ? 0.8 : 1, anchor: .leading)
+                .padding([.horizontal, .bottom], isFocus ? 10 : 0)
+            TextField("", text: $text, onEditingChanged: { editing in
+                withAnimation {
+                    isEditing = editing
+                }
+            })
+            .padding(.top, isEditing || !text.isEmpty ? 15 : 0)
+            .padding(.horizontal)
+            .focused($isFocus)
+        }
+        .padding(.top, 15)
+        .padding(.bottom, 8)
+        .background(
+            VStack {
+                Spacer()
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(
+                         .gray,
+                    lineWidth: 1)
+            }
+        )
+        .padding(.horizontal)
+    }
 }
