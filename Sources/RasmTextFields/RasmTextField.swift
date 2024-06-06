@@ -22,6 +22,7 @@ public struct RasmTextField: View {
     var trailingImage: Image? = nil
     var error: Bool = false
     var errorColor: Color = .red
+    var font: Font
     @FocusState var isFocus: Bool
     public init(
         text: Binding<String>,
@@ -30,7 +31,8 @@ public struct RasmTextField: View {
         leadingImage: Image? = nil,
         trailingImage: Image? = nil,
         error: Bool = false,
-        errorColor: Color = .red
+        errorColor: Color = .red,
+        font: Font
     ) {
         self._text = text
         self.placeholder = placeholder
@@ -39,6 +41,7 @@ public struct RasmTextField: View {
         self.trailingImage = trailingImage
         self.error = error
         self.errorColor = errorColor
+        self.font = font
     }
     public var body: some View {
         HStack {
@@ -50,6 +53,7 @@ public struct RasmTextField: View {
                 .background(backgroundView)
                 .padding(.vertical, 5)
                 .focused($isFocus)
+                .font(font)
             if let trailingImage = trailingImage {
                 trailingImage
                     .foregroundColor(
@@ -123,13 +127,15 @@ public struct RasmTextField: View {
             text: $textField1,
             placeholder: "Rounded Rectangle",
             style: .roundedRectangle(cornerRadius: 10, borderColor: .blue, borderInActiveColor: .gray, borderWidth: 2),
-            leadingImage: Image(systemName: "magnifyingglass")
+            leadingImage: Image(systemName: "magnifyingglass"),
+            font: .footnote
         )
         
         RasmTextField(
             text: $textField2,
             placeholder: "Rectangle",
-            style: .rectangle(borderColor: .green, borderWidth: 2)
+            style: .rectangle(borderColor: .green, borderWidth: 2),
+            font: .footnote
         )
         
         RasmTextField(
@@ -137,13 +143,15 @@ public struct RasmTextField: View {
             placeholder: "No Border",
             style: .noBorder,
             leadingImage: Image(systemName: "magnifyingglass"),
-            trailingImage: Image(systemName: "magnifyingglass")
+            trailingImage: Image(systemName: "magnifyingglass"),
+            font: .footnote
         )
         
         RasmTextField(
             text: $textField4,
             placeholder: "Single Line",
-            style: .singleLine(borderColor: .gray, borderWidth: 2)
+            style: .singleLine(borderColor: .gray, borderWidth: 2),
+            font: .footnote
         )
         
         RasmTextField(
@@ -151,7 +159,8 @@ public struct RasmTextField: View {
             placeholder: "With Error",
             style: .rectangle(borderColor: .gray, borderWidth: 2),
             error: hasError,
-            errorColor: .red
+            errorColor: .red,
+            font: .footnote
         )
        FloatingLabelTextField(placeholder: "swswswswsw")
         Button("Toggle Error") {
