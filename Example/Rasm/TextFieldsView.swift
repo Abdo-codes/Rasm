@@ -19,20 +19,20 @@ struct TextFieldsView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-             CustomTextField(
+             RasmTextField(
                  text: $textField1,
                  placeholder: "Rounded Rectangle",
                  style: .roundedRectangle(cornerRadius: 10, borderColor: .blue, borderWidth: 2),
                  leadingImage: Image(systemName: "magnifyingglass")
              )
              
-             CustomTextField(
+             RasmTextField(
                  text: $textField2,
                  placeholder: "Rectangle",
                  style: .rectangle(borderColor: .green, borderWidth: 2)
              )
              
-             CustomTextField(
+             RasmTextField(
                  text: $textField3,
                  placeholder: "No Border",
                  style: .noBorder,
@@ -40,13 +40,13 @@ struct TextFieldsView: View {
                  trailingImage: Image(systemName: "magnifyingglass")
              )
              
-             CustomTextField(
+             RasmTextField(
                  text: $textField4,
                  placeholder: "Single Line",
                  style: .singleLine(borderColor: .gray, borderWidth: 2)
              )
              
-             CustomTextField(
+             RasmTextField(
                  text: $textField5,
                  placeholder: "With Error",
                  style: .rectangle(borderColor: .gray, borderWidth: 2),

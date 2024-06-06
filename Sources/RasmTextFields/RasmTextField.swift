@@ -14,7 +14,7 @@ public enum TextFieldStyleType {
 
 import SwiftUI
 
-public struct CustomTextField: View {
+public struct RasmTextField: View {
     @Binding var text: String
     var placeholder: String
     var style: TextFieldStyleType
@@ -119,20 +119,20 @@ public struct CustomTextField: View {
     @State  var hasError: Bool = true
 
    return  VStack(spacing: 20) {
-        CustomTextField(
+        RasmTextField(
             text: $textField1,
             placeholder: "Rounded Rectangle",
             style: .roundedRectangle(cornerRadius: 10, borderColor: .blue, borderWidth: 2),
             leadingImage: Image(systemName: "magnifyingglass")
         )
         
-        CustomTextField(
+        RasmTextField(
             text: $textField2,
             placeholder: "Rectangle",
             style: .rectangle(borderColor: .green, borderWidth: 2)
         )
         
-        CustomTextField(
+        RasmTextField(
             text: $textField3,
             placeholder: "No Border",
             style: .noBorder,
@@ -140,13 +140,13 @@ public struct CustomTextField: View {
             trailingImage: Image(systemName: "magnifyingglass")
         )
         
-        CustomTextField(
+        RasmTextField(
             text: $textField4,
             placeholder: "Single Line",
             style: .singleLine(borderColor: .gray, borderWidth: 2)
         )
         
-        CustomTextField(
+        RasmTextField(
             text: $textField5,
             placeholder: "With Error",
             style: .rectangle(borderColor: .gray, borderWidth: 2),
