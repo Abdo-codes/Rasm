@@ -51,7 +51,7 @@ public struct RasmTextField: View {
         self.font = font
     }
     public var body: some View {
-        VStack {
+        VStack(spacing: 13) {
             HStack {
                 if let leadingImage = leadingImage {
                     leadingImage
@@ -71,6 +71,7 @@ public struct RasmTextField: View {
                 .foregroundStyle(errorColor)
                 .font(font)
                 .hiddenIf(hiddenError)
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
     
