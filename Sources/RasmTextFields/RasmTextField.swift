@@ -13,6 +13,7 @@ public enum TextFieldStyleType {
 }
 
 import SwiftUI
+import RasmModifiers
 
 public struct RasmTextField: View {
     @Binding var text: String
@@ -21,9 +22,13 @@ public struct RasmTextField: View {
     var leadingImage: Image? = nil
     var trailingImage: Image? = nil
     var error: Bool = false
+    var errorMessage: String?
     var errorColor: Color = .red
     var font: Font
     @FocusState var isFocus: Bool
+    var hiddenError: Bool {
+        (isFocus && error && errorMessage != nil)
+    }
     public init(
         text: Binding<String>,
         placeholder: String,
@@ -31,6 +36,7 @@ public struct RasmTextField: View {
         leadingImage: Image? = nil,
         trailingImage: Image? = nil,
         error: Bool = false,
+        errorMessage: String? = nil,
         errorColor: Color = .red,
         font: Font
     ) {
@@ -40,31 +46,32 @@ public struct RasmTextField: View {
         self.leadingImage = leadingImage
         self.trailingImage = trailingImage
         self.error = error
+        self.errorMessage = errorMessage
         self.errorColor = errorColor
         self.font = font
     }
     public var body: some View {
-        HStack {
-            if let leadingImage = leadingImage {
-                leadingImage
-                    .foregroundColor(error ? errorColor : .gray)
+        VStack {
+            HStack {
+                if let leadingImage = leadingImage {
+                    leadingImage
+                }
+                TextField(placeholder, text: $text)
+                    .background(backgroundView)
+                    .padding(.vertical, 5)
+                    .focused($isFocus)
+                    .font(font)
+                if let trailingImage = trailingImage {
+                    trailingImage
+                }
             }
-            TextField(placeholder, text: $text)
-                .background(backgroundView)
-                .padding(.vertical, 5)
-                .focused($isFocus)
+            .padding(.horizontal)
+            .overlay(borderView.frame(height: 40))
+            Text(errorMessage ?? "")
+                .foregroundStyle(errorColor)
                 .font(font)
-            if let trailingImage = trailingImage {
-                trailingImage
-                    .foregroundColor(
-                        (
-                            error && !isFocus && !text.isEmpty
-                        ) ? errorColor : .gray
-                    )
-            }
+                .hiddenIf(hiddenError)
         }
-        .padding(.horizontal)
-        .overlay(borderView.frame(height: 40))
     }
     
     @ViewBuilder
@@ -128,6 +135,7 @@ public struct RasmTextField: View {
             placeholder: "Rounded Rectangle",
             style: .roundedRectangle(cornerRadius: 10, borderColor: .blue, borderInActiveColor: .gray, borderWidth: 2),
             leadingImage: Image(systemName: "magnifyingglass"),
+            error: true,
             font: .footnote
         )
         
@@ -158,7 +166,7 @@ public struct RasmTextField: View {
             text: $textField5,
             placeholder: "With Error",
             style: .rectangle(borderColor: .gray, borderWidth: 2),
-            error: hasError,
+            error: true,
             errorColor: .red,
             font: .footnote
         )

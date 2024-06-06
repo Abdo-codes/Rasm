@@ -22,14 +22,17 @@ struct TextFieldsView: View {
              RasmTextField(
                  text: $textField1,
                  placeholder: "Rounded Rectangle",
-                 style: .roundedRectangle(cornerRadius: 10, borderColor: .blue, borderWidth: 2),
-                 leadingImage: Image(systemName: "magnifyingglass")
+                 style: .roundedRectangle(cornerRadius: 10, borderColor: .blue, borderInActiveColor: .gray, borderWidth: 2),
+                 leadingImage: Image(systemName: "magnifyingglass"),
+                 error: true,
+                 errorMessage: "Error Message",
+                 font: .footnote
              )
              
              RasmTextField(
                  text: $textField2,
                  placeholder: "Rectangle",
-                 style: .rectangle(borderColor: .green, borderWidth: 2)
+                 style: .rectangle(borderColor: .green, borderWidth: 2), font: .footnote
              )
              
              RasmTextField(
@@ -37,13 +40,13 @@ struct TextFieldsView: View {
                  placeholder: "No Border",
                  style: .noBorder,
                  leadingImage: Image(systemName: "magnifyingglass"),
-                 trailingImage: Image(systemName: "magnifyingglass")
+                 trailingImage: Image(systemName: "magnifyingglass"), font: .footnote
              )
              
              RasmTextField(
                  text: $textField4,
                  placeholder: "Single Line",
-                 style: .singleLine(borderColor: .gray, borderWidth: 2)
+                 style: .singleLine(borderColor: .gray, borderWidth: 2), font: .footnote
              )
              
              RasmTextField(
@@ -51,7 +54,7 @@ struct TextFieldsView: View {
                  placeholder: "With Error",
                  style: .rectangle(borderColor: .gray, borderWidth: 2),
                  error: hasError,
-                 errorColor: .red
+                 errorColor: .red, font: .footnote
              )
              Spacer()
              Button("Toggle Error") {
