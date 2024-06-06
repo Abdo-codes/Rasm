@@ -6,7 +6,7 @@
 //
 
 public enum TextFieldStyleType {
-    case roundedRectangle(cornerRadius: CGFloat, borderColor: Color, borderWidth: CGFloat)
+    case roundedRectangle(cornerRadius: CGFloat, borderColor: Color, borderInActiveColor: Color ,borderWidth: CGFloat)
     case rectangle(borderColor: Color, borderWidth: CGFloat)
     case noBorder
     case singleLine(borderColor: Color, borderWidth: CGFloat)
@@ -76,12 +76,12 @@ public struct RasmTextField: View {
     @ViewBuilder
     private var borderView: some View {
         switch style {
-        case .roundedRectangle(let cornerRadius, let borderColor, let borderWidth):
+        case .roundedRectangle(let cornerRadius, let borderColor, let borderInActiveColor, let borderWidth):
             RoundedRectangle(cornerRadius: cornerRadius)
                 .stroke(
                     (
                         error && !isFocus && !text.isEmpty
-                    ) ? errorColor : borderColor,
+                    ) ? errorColor : isFocus ? borderColor : borderInActiveColor,
                     lineWidth: borderWidth
                 )
         case .rectangle(let borderColor, let borderWidth):
@@ -122,7 +122,7 @@ public struct RasmTextField: View {
         RasmTextField(
             text: $textField1,
             placeholder: "Rounded Rectangle",
-            style: .roundedRectangle(cornerRadius: 10, borderColor: .blue, borderWidth: 2),
+            style: .roundedRectangle(cornerRadius: 10, borderColor: .blue, borderInActiveColor: .gray, borderWidth: 2),
             leadingImage: Image(systemName: "magnifyingglass")
         )
         
