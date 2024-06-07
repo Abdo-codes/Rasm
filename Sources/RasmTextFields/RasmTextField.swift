@@ -63,7 +63,6 @@ public struct RasmTextField: View {
                 }
                 TextField(placeholder, text: $text)
                     .font(font)
-                    .padding(.vertical, 5)
                     .frame(height: height)
                     .focused($isFocus)
                     .background(backgroundView)
