@@ -26,8 +26,8 @@ public struct RasmTextField: View {
     var errorColor: Color
     var font: Font
     var height: CGFloat
-    var hiddenError: Bool {
-        (isFocus && error && errorMessage != nil)
+    var showError: Bool {
+        (!isFocus && error && errorMessage != nil)
     }
     @FocusState private var isFocus: Bool
 
@@ -72,7 +72,7 @@ public struct RasmTextField: View {
             }
             .padding(.horizontal)
             .overlay(borderView)
-            if !hiddenError {
+            if showError {
                 Text(errorMessage ?? "")
                     .foregroundStyle(errorColor)
                     .font(font)
