@@ -72,11 +72,12 @@ public struct RasmTextField: View {
             }
             .padding(.horizontal)
             .overlay(borderView)
-            Text(errorMessage ?? "")
-                .foregroundStyle(errorColor)
-                .font(font)
-                .hiddenIf(hiddenError)
-                .frame(maxWidth: .infinity, alignment: .leading)
+            if !hiddenError {
+                Text(errorMessage ?? "")
+                    .foregroundStyle(errorColor)
+                    .font(font)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+            }
         }
     }
 
