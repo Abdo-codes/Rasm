@@ -24,11 +24,10 @@ struct TextFieldsView: View {
                  placeholder: "Rounded Rectangle",
                  style: .roundedRectangle(cornerRadius: 10, borderColor: .blue, borderInActiveColor: .gray, borderWidth: 2),
                  leadingImage: Image(systemName: "magnifyingglass"),
-                 error: true,
+                 error: hasError,
                  errorMessage: "Error Message",
                  font: .footnote
              )
-             
              RasmTextField(
                  text: $textField2,
                  placeholder: "Rectangle",
