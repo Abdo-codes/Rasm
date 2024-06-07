@@ -25,6 +25,7 @@ public struct RasmTextField: View {
     var errorMessage: String?
     var errorColor: Color = .red
     var font: Font
+    var height: CGFloat
     @FocusState var isFocus: Bool
     var hiddenError: Bool {
         (isFocus && error && errorMessage != nil)
@@ -38,7 +39,8 @@ public struct RasmTextField: View {
         error: Bool = false,
         errorMessage: String? = nil,
         errorColor: Color = .red,
-        font: Font
+        font: Font,
+        height: CGFloat = 45
     ) {
         self._text = text
         self.placeholder = placeholder
@@ -49,6 +51,7 @@ public struct RasmTextField: View {
         self.errorMessage = errorMessage
         self.errorColor = errorColor
         self.font = font
+        self.height = height
     }
     public var body: some View {
         VStack(spacing: 13) {
@@ -66,7 +69,7 @@ public struct RasmTextField: View {
                 }
             }
             .padding(.horizontal)
-            .overlay(borderView.frame(height: 48))
+            .overlay(borderView.frame(height: height))
             Text(errorMessage ?? "")
                 .foregroundStyle(errorColor)
                 .font(font)
