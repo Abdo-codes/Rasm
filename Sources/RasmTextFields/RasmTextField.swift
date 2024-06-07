@@ -66,7 +66,7 @@ public struct RasmTextField: View {
                 }
             }
             .padding(.horizontal)
-            .overlay(borderView.frame(height: 40))
+            .overlay(borderView.frame(height: 48))
             Text(errorMessage ?? "")
                 .foregroundStyle(errorColor)
                 .font(font)
