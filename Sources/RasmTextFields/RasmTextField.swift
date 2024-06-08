@@ -26,6 +26,8 @@ public struct RasmTextField: View {
     var errorColor: Color
     var font: Font
     var height: CGFloat
+    var disableColor: Color
+    var isDisable: Bool
     var showError: Bool {
         (!isFocus && error && errorMessage != nil)
     }
@@ -41,7 +43,9 @@ public struct RasmTextField: View {
         errorMessage: String? = nil,
         errorColor: Color = .red,
         font: Font,
-        height: CGFloat = 45
+        height: CGFloat = 45,
+        disableColor: Color = .gray,
+        isDisable: Bool = false
     ) {
         self._text = text
         self.placeholder = placeholder
@@ -53,6 +57,8 @@ public struct RasmTextField: View {
         self.errorColor = errorColor
         self.font = font
         self.height = height
+        self.disableColor = disableColor
+        self.isDisable = isDisable
     }
 
     public var body: some View {
@@ -71,6 +77,7 @@ public struct RasmTextField: View {
                 }
             }
             .padding(.horizontal)
+            .disabled(isDisable)
             .overlay(borderView)
             if showError {
                 Text(errorMessage ?? "")
@@ -87,7 +94,7 @@ public struct RasmTextField: View {
         case .noBorder:
             Color.clear
         default:
-            Color.white
+            Color.clear
         }
     }
 
@@ -101,6 +108,7 @@ public struct RasmTextField: View {
                     lineWidth: borderWidth
                 )
                 .frame(height: height)
+                .background(isDisable ? disableColor.cornerRadius(cornerRadius) : Color.clear.cornerRadius(cornerRadius))
         case .rectangle(let borderColor, let borderWidth):
             Rectangle()
                 .stroke(
