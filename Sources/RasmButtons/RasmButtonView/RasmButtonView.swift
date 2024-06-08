@@ -27,14 +27,14 @@ public struct RasmButtonViewState<Style: CustomButtonStyle> {
     var title: String
     var font: Font
     var buttonStyle: Style
-    var image: String?
+    var image: Image?
     var action: () -> Void
     public init(
         type: ButtonType,
         title: String,
         font: Font,
         buttonStyle: Style,
-        image: String? = nil,
+        image: Image? = nil,
         action: @escaping () -> Void
     ) {
         self.type = type
@@ -61,10 +61,12 @@ public struct RasmButtonView<Style: CustomButtonStyle>: View {
                 Text(viewState.title)
                     .hiddenIf(viewState.type.hiddenTitle)
                     .font(viewState.font)
-                Image(viewState.image ?? "")
+                if let image = viewState.image {
+                    image
                     .resizable()
                     .frame(width: 20, height: 20)
                     .hiddenIf(viewState.type.hiddenImage)
+                }
             }
             .frame(maxWidth: .infinity)
         }
