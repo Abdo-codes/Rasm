@@ -30,7 +30,12 @@ public struct RasmTextField: View {
     var isDisable: Bool
     var isSecure: Bool
     var showError: Bool {
-        (!isFocus && error && errorMessage != nil)
+        (
+            !isFocus
+            && error
+            && errorMessage != nil
+            && !text.isEmpty
+        )
     }
     @FocusState private var isFocus: Bool
 
