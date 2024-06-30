@@ -86,6 +86,7 @@ public struct RasmTextField: View {
                         leadingAction?()
                     } label: {
                         leadingImage
+                            .frame(width: 16, height: 16)
                     }
                     .disabled(leadingAction == nil)
                 }
@@ -119,6 +120,7 @@ public struct RasmTextField: View {
                         trailingAction?()
                     } label: {
                         trailingImage
+                            .frame(width: 16, height: 16)
                     }
                     .disabled(trailingAction == nil)
                 }
