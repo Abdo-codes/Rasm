@@ -29,6 +29,7 @@ public struct RasmTextField: View {
     var disableColor: Color
     var isDisable: Bool
     var isSecure: Bool
+    var placeholderColor: Color
     var showError: Bool {
         (
             !isFocus
@@ -52,7 +53,8 @@ public struct RasmTextField: View {
         height: CGFloat = 45,
         disableColor: Color = .gray,
         isDisable: Bool = false,
-        isSecure: Bool = false
+        isSecure: Bool = false,
+        placeholderColor: Color = .gray
     ) {
         self._text = text
         self.placeholder = placeholder
@@ -67,6 +69,7 @@ public struct RasmTextField: View {
         self.disableColor = disableColor
         self.isDisable = isDisable
         self.isSecure = isSecure
+        self.placeholderColor = placeholderColor
     }
 
     public var body: some View {
@@ -76,13 +79,25 @@ public struct RasmTextField: View {
                     leadingImage
                 }
                 if isSecure {
-                    SecureField(placeholder, text: $text)
+                    SecureField(
+                        "",
+                        text: $text,
+                        prompt: Text(placeholder)
+                            .foregroundColor(placeholderColor)
+                            .font(font)
+                    )
                         .font(font)
                         .frame(height: height)
                         .focused($isFocus)
                         .background(backgroundView)
                 }else {
-                    TextField(placeholder, text: $text)
+                    TextField(
+                        "",
+                        text: $text,
+                        prompt: Text(placeholder)
+                            .foregroundColor(placeholderColor)
+                            .font(font)
+                    )
                         .font(font)
                         .frame(height: height)
                         .focused($isFocus)
