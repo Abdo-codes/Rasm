@@ -30,6 +30,8 @@ public struct RasmTextField: View {
     var isDisable: Bool
     var isSecure: Bool
     var placeholderColor: Color
+    var leadingAction: (() -> Void)?
+    var trailingAction: (() -> Void)?
     var showError: Bool {
         (
             !isFocus
@@ -54,7 +56,9 @@ public struct RasmTextField: View {
         disableColor: Color = .gray,
         isDisable: Bool = false,
         isSecure: Bool = false,
-        placeholderColor: Color = .gray
+        placeholderColor: Color = .gray,
+        leadingAction: (() -> Void)? = nil,
+        trailingAction: (() -> Void)? = nil
     ) {
         self._text = text
         self.placeholder = placeholder
@@ -70,13 +74,20 @@ public struct RasmTextField: View {
         self.isDisable = isDisable
         self.isSecure = isSecure
         self.placeholderColor = placeholderColor
+        self.leadingAction = leadingAction
+        self.trailingAction = trailingAction
     }
 
     public var body: some View {
         VStack(spacing: 13) {
             HStack {
                 if let leadingImage = leadingImage {
-                    leadingImage
+                    Button {
+                        leadingAction?()
+                    } label: {
+                        leadingImage
+                    }
+                    .disabled(leadingAction == nil)
                 }
                 if isSecure {
                     SecureField(
@@ -104,7 +115,12 @@ public struct RasmTextField: View {
                         .background(backgroundView)
                 }
                 if let trailingImage = trailingImage {
-                    trailingImage
+                    Button {
+                        trailingAction?()
+                    } label: {
+                        trailingImage
+                    }
+                    .disabled(trailingAction == nil)
                 }
             }
             .padding(.horizontal)
@@ -179,7 +195,8 @@ public struct RasmTextField: View {
             style: .roundedRectangle(cornerRadius: 10, borderColor: .blue, borderInActiveColor: .gray, borderWidth: 2),
             leadingImage: Image(systemName: "magnifyingglass"),
             error: true,
-            font: .footnote
+            font: .footnote,
+            leadingAction: { print("Hello")}
         )
         
         RasmTextField(
