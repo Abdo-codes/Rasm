@@ -32,6 +32,8 @@ public struct RasmTextField: View {
     var placeholderColor: Color
     var leadingAction: (() -> Void)?
     var trailingAction: (() -> Void)?
+    var keyboadType: UIKeyboardType
+    var textContentType: UITextContentType?
     var showError: Bool {
         (
             !isFocus
@@ -57,6 +59,8 @@ public struct RasmTextField: View {
         isDisable: Bool = false,
         isSecure: Bool = false,
         placeholderColor: Color = .gray,
+        keyboadType: UIKeyboardType = .default,
+        textContentType: UITextContentType? = nil,
         leadingAction: (() -> Void)? = nil,
         trailingAction: (() -> Void)? = nil
     ) {
@@ -76,6 +80,8 @@ public struct RasmTextField: View {
         self.placeholderColor = placeholderColor
         self.leadingAction = leadingAction
         self.trailingAction = trailingAction
+        self.keyboadType = keyboadType
+        self.textContentType = textContentType
     }
 
     public var body: some View {
@@ -103,6 +109,11 @@ public struct RasmTextField: View {
                         .frame(height: height)
                         .focused($isFocus)
                         .background(backgroundView)
+                        .textCase(.lowercase)
+                        .autocorrectionDisabled()
+                        .textInputAutocapitalization(.never)
+                        .textContentType(textContentType)
+                        .keyboardType(keyboadType)
                 }else {
                     TextField(
                         "",
@@ -115,6 +126,11 @@ public struct RasmTextField: View {
                         .frame(height: height)
                         .focused($isFocus)
                         .background(backgroundView)
+                        .textCase(.lowercase)
+                        .autocorrectionDisabled()
+                        .textInputAutocapitalization(.never)
+                        .textContentType(textContentType)
+                        .keyboardType(keyboadType)
                 }
                 if let trailingImage = trailingImage {
                     Button {
