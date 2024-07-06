@@ -1,12 +1,12 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by MahmoudFares on 01/06/2024.
 //
 
-import SwiftUI
 import RasmModifiers
+import SwiftUI
 
 public enum TextFieldStyleType {
     case roundedRectangle(cornerRadius: CGFloat, borderColor: Color, borderInActiveColor: Color, borderWidth: CGFloat)
@@ -32,16 +32,16 @@ public struct RasmTextField: View {
     var placeholderColor: Color
     var leadingAction: (() -> Void)?
     var trailingAction: (() -> Void)?
+    var onSubmitAction: (() -> Void)?
     var keyboadType: UIKeyboardType
     var textContentType: UITextContentType?
     var showError: Bool {
-        (
-            !isFocus
+        !isFocus
             && error
             && errorMessage != nil
             && !text.isEmpty
-        )
     }
+
     @FocusState private var isFocus: Bool
 
     public init(
@@ -62,9 +62,10 @@ public struct RasmTextField: View {
         keyboadType: UIKeyboardType = .default,
         textContentType: UITextContentType? = nil,
         leadingAction: (() -> Void)? = nil,
-        trailingAction: (() -> Void)? = nil
+        trailingAction: (() -> Void)? = nil,
+        onSubmitAction: (() -> Void)? = nil
     ) {
-        self._text = text
+        _text = text
         self.placeholder = placeholder
         self.style = style
         self.leadingImage = leadingImage
@@ -82,6 +83,7 @@ public struct RasmTextField: View {
         self.trailingAction = trailingAction
         self.keyboadType = keyboadType
         self.textContentType = textContentType
+        self.onSubmitAction = onSubmitAction
     }
 
     public var body: some View {
@@ -105,16 +107,19 @@ public struct RasmTextField: View {
                             .foregroundColor(placeholderColor)
                             .font(font)
                     )
-                        .font(font)
-                        .frame(height: height)
-                        .focused($isFocus)
-                        .background(backgroundView)
-                        .textCase(.lowercase)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
-                        .textContentType(textContentType)
-                        .keyboardType(keyboadType)
-                }else {
+                    .font(font)
+                    .frame(height: height)
+                    .focused($isFocus)
+                    .background(backgroundView)
+                    .textCase(.lowercase)
+                    .autocorrectionDisabled()
+                    .textInputAutocapitalization(.never)
+                    .textContentType(textContentType)
+                    .keyboardType(keyboadType)
+                    .onSubmit {
+                        onSubmitAction?()
+                    }
+                } else {
                     TextField(
                         "",
                         text: $text,
@@ -122,15 +127,18 @@ public struct RasmTextField: View {
                             .foregroundColor(placeholderColor)
                             .font(font)
                     )
-                        .font(font)
-                        .frame(height: height)
-                        .focused($isFocus)
-                        .background(backgroundView)
-                        .textCase(.lowercase)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
-                        .textContentType(textContentType)
-                        .keyboardType(keyboadType)
+                    .font(font)
+                    .frame(height: height)
+                    .focused($isFocus)
+                    .background(backgroundView)
+                    .textCase(.lowercase)
+                    .autocorrectionDisabled()
+                    .textInputAutocapitalization(.never)
+                    .textContentType(textContentType)
+                    .keyboardType(keyboadType)
+                    .onSubmit {
+                        onSubmitAction?()
+                    }
                 }
                 if let trailingImage = trailingImage {
                     Button {
@@ -168,7 +176,7 @@ public struct RasmTextField: View {
     @ViewBuilder
     private var borderView: some View {
         switch style {
-        case .roundedRectangle(let cornerRadius, let borderColor, let borderInActiveColor, let borderWidth):
+        case let .roundedRectangle(cornerRadius, borderColor, borderInActiveColor, borderWidth):
             RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                 .stroke(
                     (error && !isFocus && !text.isEmpty) ? errorColor : isFocus ? borderColor : borderInActiveColor,
@@ -176,7 +184,7 @@ public struct RasmTextField: View {
                 )
                 .frame(height: height)
                 .background(isDisable ? disableColor.cornerRadius(cornerRadius) : Color.clear.cornerRadius(cornerRadius))
-        case .rectangle(let borderColor, let borderWidth):
+        case let .rectangle(borderColor, borderWidth):
             Rectangle()
                 .stroke(
                     (error && !isFocus && !text.isEmpty) ? errorColor : borderColor,
@@ -185,7 +193,7 @@ public struct RasmTextField: View {
                 .frame(height: height)
         case .noBorder:
             EmptyView()
-        case .singleLine(let borderColor, let borderWidth):
+        case let .singleLine(borderColor, borderWidth):
             VStack {
                 Spacer()
                 Rectangle()
@@ -199,16 +207,15 @@ public struct RasmTextField: View {
     }
 }
 
-
 #Preview {
-    @State  var textField1: String = ""
-    @State  var textField2: String = ""
-    @State  var textField3: String = ""
-    @State  var textField4: String = ""
-    @State  var textField5: String = ""
-    @State  var hasError: Bool = true
+    @State var textField1: String = ""
+    @State var textField2: String = ""
+    @State var textField3: String = ""
+    @State var textField4: String = ""
+    @State var textField5: String = ""
+    @State var hasError: Bool = true
 
-   return  VStack(spacing: 0) {
+    return VStack(spacing: 0) {
         RasmTextField(
             text: $textField1,
             placeholder: "Rounded Rectangle",
@@ -216,16 +223,16 @@ public struct RasmTextField: View {
             leadingImage: Image(systemName: "magnifyingglass"),
             error: true,
             font: .footnote,
-            leadingAction: { print("Hello")}
+            leadingAction: { print("Hello") }
         )
-        
+
         RasmTextField(
             text: $textField2,
             placeholder: "Rectangle",
             style: .rectangle(borderColor: .green, borderWidth: 2),
             font: .footnote
         )
-        
+
         RasmTextField(
             text: $textField3,
             placeholder: "No Border",
@@ -234,14 +241,14 @@ public struct RasmTextField: View {
             trailingImage: Image(systemName: "magnifyingglass"),
             font: .footnote
         )
-        
+
         RasmTextField(
             text: $textField4,
             placeholder: "Single Line",
             style: .singleLine(borderColor: .gray, borderWidth: 2),
             font: .footnote
         )
-        
+
         RasmTextField(
             text: $textField5,
             placeholder: "With Error",
@@ -250,7 +257,7 @@ public struct RasmTextField: View {
             errorColor: .red,
             font: .footnote
         )
-       FloatingLabelTextField(placeholder: "swswswswsw")
+        FloatingLabelTextField(placeholder: "swswswswsw")
         Button("Toggle Error") {
             hasError.toggle()
         }
@@ -260,8 +267,8 @@ public struct RasmTextField: View {
         .cornerRadius(8)
     }
     .padding()
-
 }
+
 struct FloatingLabelTextField: View {
     @State private var text: String = ""
     @State private var isEditing: Bool = false
@@ -292,8 +299,8 @@ struct FloatingLabelTextField: View {
                 Spacer()
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(
-                         .gray,
-                    lineWidth: 1)
+                        .gray,
+                        lineWidth: 1)
             }
         )
         .padding(.horizontal)
