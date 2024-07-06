@@ -107,6 +107,9 @@ public struct RasmTextField: View {
                             .foregroundColor(placeholderColor)
                             .font(font)
                     )
+                    .onSubmit {
+                        onSubmitAction?()
+                    }
                     .font(font)
                     .frame(height: height)
                     .focused($isFocus)
@@ -116,9 +119,7 @@ public struct RasmTextField: View {
                     .textInputAutocapitalization(.never)
                     .textContentType(textContentType)
                     .keyboardType(keyboadType)
-                    .onSubmit {
-                        onSubmitAction?()
-                    }
+
                 } else {
                     TextField(
                         "",
@@ -127,6 +128,9 @@ public struct RasmTextField: View {
                             .foregroundColor(placeholderColor)
                             .font(font)
                     )
+                    .onSubmit {
+                        onSubmitAction?()
+                    }
                     .font(font)
                     .frame(height: height)
                     .focused($isFocus)
@@ -136,9 +140,6 @@ public struct RasmTextField: View {
                     .textInputAutocapitalization(.never)
                     .textContentType(textContentType)
                     .keyboardType(keyboadType)
-                    .onSubmit {
-                        onSubmitAction?()
-                    }
                 }
                 if let trailingImage = trailingImage {
                     Button {
