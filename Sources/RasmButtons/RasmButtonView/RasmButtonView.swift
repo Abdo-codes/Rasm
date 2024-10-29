@@ -28,6 +28,7 @@ public struct RasmButtonViewState<Style: CustomButtonStyle> {
     var font: Font
     var buttonStyle: Style
     var image: Image?
+    var imageWidth: CGFloat
     var action: () -> Void
     public init(
         type: ButtonType,
@@ -35,6 +36,7 @@ public struct RasmButtonViewState<Style: CustomButtonStyle> {
         font: Font,
         buttonStyle: Style,
         image: Image? = nil,
+        imageWidth: CGFloat = 20,
         action: @escaping () -> Void
     ) {
         self.type = type
@@ -42,6 +44,7 @@ public struct RasmButtonViewState<Style: CustomButtonStyle> {
         self.font = font
         self.buttonStyle = buttonStyle
         self.image = image
+        self.imageWidth = imageWidth
         self.action = action
     }
 }
@@ -64,7 +67,7 @@ public struct RasmButtonView<Style: CustomButtonStyle>: View {
                 if let image = viewState.image {
                     image
                     .resizable()
-                    .frame(width: 20, height: 20)
+                    .frame(width: viewState.imageWidth, height: viewState.imageWidth)
                     .hiddenIf(viewState.type.hiddenImage)
                 }
             }
