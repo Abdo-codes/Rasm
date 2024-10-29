@@ -64,6 +64,7 @@ public struct RasmButtonView<Style: CustomButtonStyle>: View {
                 Text(viewState.title)
                     .hiddenIf(viewState.type.hiddenTitle)
                     .font(viewState.font)
+                    .minimumScaleFactor(0.50)
                 if let image = viewState.image {
                     image
                     .resizable()
