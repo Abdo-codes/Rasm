@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/master.swiftdeps"
+  },
+  "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmModifiers/HiddenModefier.swift": {
+    "dependencies": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/HiddenModefier.d",
+    "object": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/HiddenModefier.swift.o",
+    "swiftmodule": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/HiddenModefier~partial.swiftmodule",
+    "swift-dependencies": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/HiddenModefier.swiftdeps"
+  }
+}

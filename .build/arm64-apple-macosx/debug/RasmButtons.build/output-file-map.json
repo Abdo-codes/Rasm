@@ -1,0 +1,23 @@
+{
+  "": {
+    "swift-dependencies": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/master.swiftdeps"
+  },
+  "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/ButtonsModifiers/ShapeButtonStyle.swift": {
+    "dependencies": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/ShapeButtonStyle.d",
+    "object": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/ShapeButtonStyle.swift.o",
+    "swiftmodule": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/ShapeButtonStyle~partial.swiftmodule",
+    "swift-dependencies": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/ShapeButtonStyle.swiftdeps"
+  },
+  "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/ButtonsModifiers/Style.swift": {
+    "dependencies": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/Style.d",
+    "object": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/Style.swift.o",
+    "swiftmodule": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/Style~partial.swiftmodule",
+    "swift-dependencies": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/Style.swiftdeps"
+  },
+  "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/RasmButtonView/RasmButtonView.swift": {
+    "dependencies": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/RasmButtonView.d",
+    "object": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/RasmButtonView.swift.o",
+    "swiftmodule": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/RasmButtonView~partial.swiftmodule",
+    "swift-dependencies": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/RasmButtonView.swiftdeps"
+  }
+}

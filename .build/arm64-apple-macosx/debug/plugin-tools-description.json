@@ -1,0 +1,789 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.Rasm-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode-16.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/sources",
+      "importPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/Rasm/Rasm.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/swift-version-239F2A40393FBBF.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules/RasmModifiers.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules/RasmButtons.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules/RasmTextFields.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "Rasm",
+      "moduleOutputPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules/Rasm.swiftmodule",
+      "objects" : [
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/Rasm.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx11.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/Rasm-Swift.h",
+        "-swift-version",
+        "5",
+        "-sdk",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-F",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "rasmfork"
+      ],
+      "outputFileMapPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/Rasm.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules/Rasm.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/Rasm/Rasm.swift"
+      ],
+      "tempsPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.RasmButtons-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode-16.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/sources",
+      "importPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/ButtonsModifiers/ShapeButtonStyle.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/ButtonsModifiers/Style.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/RasmButtonView/RasmButtonView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/swift-version-239F2A40393FBBF.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules/RasmModifiers.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "RasmButtons",
+      "moduleOutputPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules/RasmButtons.swiftmodule",
+      "objects" : [
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/ShapeButtonStyle.swift.o",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/Style.swift.o",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/RasmButtonView.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx11.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/RasmButtons-Swift.h",
+        "-swift-version",
+        "5",
+        "-sdk",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-F",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "rasmfork"
+      ],
+      "outputFileMapPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/ShapeButtonStyle.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/Style.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/RasmButtonView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules/RasmButtons.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/ButtonsModifiers/ShapeButtonStyle.swift",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/ButtonsModifiers/Style.swift",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/RasmButtonView/RasmButtonView.swift"
+      ],
+      "tempsPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.RasmModifiers-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode-16.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/sources",
+      "importPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmModifiers/HiddenModefier.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/swift-version-239F2A40393FBBF.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "RasmModifiers",
+      "moduleOutputPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules/RasmModifiers.swiftmodule",
+      "objects" : [
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/HiddenModefier.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx11.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/RasmModifiers-Swift.h",
+        "-swift-version",
+        "5",
+        "-sdk",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-F",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "rasmfork"
+      ],
+      "outputFileMapPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/HiddenModefier.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules/RasmModifiers.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmModifiers/HiddenModefier.swift"
+      ],
+      "tempsPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.RasmTextFields-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode-16.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmTextFields.build/sources",
+      "importPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmTextFields/RasmTextField.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/swift-version-239F2A40393FBBF.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules/RasmModifiers.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmTextFields.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "RasmTextFields",
+      "moduleOutputPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules/RasmTextFields.swiftmodule",
+      "objects" : [
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmTextFields.build/RasmTextField.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx11.0",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmTextFields.build/RasmTextFields-Swift.h",
+        "-swift-version",
+        "5",
+        "-sdk",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-F",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "rasmfork"
+      ],
+      "outputFileMapPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmTextFields.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmTextFields.build/RasmTextField.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules/RasmTextFields.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmTextFields/RasmTextField.swift"
+      ],
+      "tempsPath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmTextFields.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "Rasm" : [
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "Rasm",
+      "-package-name",
+      "rasmfork",
+      "-incremental",
+      "-c",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/Rasm/Rasm.swift",
+      "-I",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx11.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/Rasm-Swift.h",
+      "-swift-version",
+      "5",
+      "-sdk",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-F",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "rasmfork",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "RasmButtons" : [
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "RasmButtons",
+      "-package-name",
+      "rasmfork",
+      "-incremental",
+      "-c",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/ButtonsModifiers/ShapeButtonStyle.swift",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/ButtonsModifiers/Style.swift",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/RasmButtonView/RasmButtonView.swift",
+      "-I",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx11.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/RasmButtons-Swift.h",
+      "-swift-version",
+      "5",
+      "-sdk",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-F",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "rasmfork",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "RasmModifiers" : [
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "RasmModifiers",
+      "-package-name",
+      "rasmfork",
+      "-incremental",
+      "-c",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmModifiers/HiddenModefier.swift",
+      "-I",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx11.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/RasmModifiers-Swift.h",
+      "-swift-version",
+      "5",
+      "-sdk",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-F",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "rasmfork",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "RasmTextFields" : [
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "RasmTextFields",
+      "-package-name",
+      "rasmfork",
+      "-incremental",
+      "-c",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmTextFields/RasmTextField.swift",
+      "-I",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx11.0",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmTextFields.build/RasmTextFields-Swift.h",
+      "-swift-version",
+      "5",
+      "-sdk",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-F",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.5.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "rasmfork",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode-16.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "Rasm" : [
+      "RasmTextFields",
+      "RasmButtons",
+      "RasmModifiers"
+    ],
+    "RasmButtons" : [
+      "RasmModifiers"
+    ],
+    "RasmModifiers" : [
+
+    ],
+    "RasmTextFields" : [
+      "RasmModifiers"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "enableAllTraits" : false
+  },
+  "writeCommands" : {
+    "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/Rasm/Rasm.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/sources"
+    },
+    "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/ButtonsModifiers/ShapeButtonStyle.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/ButtonsModifiers/Style.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmButtons/RasmButtonView/RasmButtonView.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmButtons.build/sources"
+    },
+    "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmModifiers/HiddenModefier.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmModifiers.build/sources"
+    },
+    "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmTextFields.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/RasmTextFields/RasmTextField.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/RasmTextFields.build/sources"
+    },
+    "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/swift-version-239F2A40393FBBF.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode-16.4.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/swift-version-239F2A40393FBBF.txt"
+    }
+  }
+}

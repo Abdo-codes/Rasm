@@ -1,0 +1,4 @@
+module Rasm {
+    header "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/Rasm-Swift.h"
+    requires objc
+}

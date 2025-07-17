@@ -19,7 +19,7 @@ public enum TextFieldStyleType {
     case singleLine(borderColor: Color, borderWidth: CGFloat)
 }
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
 public struct RasmTextField: View {
     @Binding var text: String
     var placeholder: String
@@ -51,9 +51,9 @@ public struct RasmTextField: View {
             && !text.isEmpty
     }
 
-    @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
     @FocusState private var isFocus: Bool
 
+    #if canImport(UIKit)
     public init(
         text: Binding<String>,
         placeholder: String,
@@ -69,10 +69,8 @@ public struct RasmTextField: View {
         isDisable: Bool = false,
         isSecure: Bool = false,
         placeholderColor: Color = .gray,
-        #if canImport(UIKit)
         keyboadType: UIKeyboardType = .default,
         textContentType: UITextContentType? = nil,
-        #endif
         leadingAction: (() -> Void)? = nil,
         trailingAction: (() -> Void)? = nil,
         onSubmitAction: (() -> Void)? = nil
@@ -94,12 +92,48 @@ public struct RasmTextField: View {
         self.leadingAction = leadingAction
         self.trailingAction = trailingAction
         self.onSubmitAction = onSubmitAction
-        
-        #if canImport(UIKit)
         self.keyboadType = keyboadType
         self.textContentType = textContentType
-        #endif
     }
+    #else
+    public init(
+        text: Binding<String>,
+        placeholder: String,
+        style: TextFieldStyleType,
+        leadingImage: Image? = nil,
+        trailingImage: Image? = nil,
+        error: Bool = false,
+        errorMessage: String? = nil,
+        errorColor: Color = .red,
+        font: Font,
+        height: CGFloat = 45,
+        disableColor: Color = .gray,
+        isDisable: Bool = false,
+        isSecure: Bool = false,
+        placeholderColor: Color = .gray,
+        leadingAction: (() -> Void)? = nil,
+        trailingAction: (() -> Void)? = nil,
+        onSubmitAction: (() -> Void)? = nil
+    ) {
+        _text = text
+        self.placeholder = placeholder
+        self.style = style
+        self.leadingImage = leadingImage
+        self.trailingImage = trailingImage
+        self.error = error
+        self.errorMessage = errorMessage
+        self.errorColor = errorColor
+        self.font = font
+        self.height = height
+        self.disableColor = disableColor
+        self.isDisable = isDisable
+        self.isSecure = isSecure
+        self.placeholderColor = placeholderColor
+        self.leadingAction = leadingAction
+        self.trailingAction = trailingAction
+        self.onSubmitAction = onSubmitAction
+    }
+    #endif
 
     public var body: some View {
         VStack(spacing: 13) {
@@ -257,7 +291,7 @@ public struct RasmTextField: View {
     }
 }
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
 #Preview {
     @State var textField1: String = ""
     @State var textField2: String = ""

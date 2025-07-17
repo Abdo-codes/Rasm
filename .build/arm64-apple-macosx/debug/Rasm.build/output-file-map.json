@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/master.swiftdeps"
+  },
+  "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/Sources/Rasm/Rasm.swift": {
+    "dependencies": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/Rasm.d",
+    "object": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/Rasm.swift.o",
+    "swiftmodule": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/Rasm~partial.swiftmodule",
+    "swift-dependencies": "/Users/abdoerlhman/Developer/Side/seirah/RasmFork/.build/arm64-apple-macosx/debug/Rasm.build/Rasm.swiftdeps"
+  }
+}
