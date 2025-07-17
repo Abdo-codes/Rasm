@@ -150,71 +150,49 @@ public struct RasmTextField: View {
                 }
                 
                 if isSecure {
-                    if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) {
-                        SecureField(
-                            "",
-                            text: $text,
-                            prompt: Text(placeholder)
-                                .foregroundColor(placeholderColor)
-                                .font(font)
-                        )
-                        .onSubmit {
-                            onSubmitAction?()
-                        }
-                        .font(font)
-                        .frame(height: height)
-                        .focused($isFocus)
-                        .background(backgroundView)
-                        .textCase(.lowercase)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
-                        #if canImport(UIKit)
-                        .textContentType(textContentType)
-                        .keyboardType(keyboadType)
-                        #endif
-                    } else {
-                        SecureField(placeholder, text: $text)
+                    SecureField(
+                        "",
+                        text: $text,
+                        prompt: Text(placeholder)
+                            .foregroundColor(placeholderColor)
                             .font(font)
-                            .frame(height: height)
-                            .background(backgroundView)
-                            #if canImport(UIKit)
-                            .textContentType(textContentType)
-                            .keyboardType(keyboadType)
-                            #endif
+                    )
+                    .onSubmit {
+                        onSubmitAction?()
                     }
+                    .font(font)
+                    .frame(height: height)
+                    .focused($isFocus)
+                    .background(backgroundView)
+                    .textCase(.lowercase)
+                    .autocorrectionDisabled()
+                    .textInputAutocapitalization(.never)
+                    #if canImport(UIKit)
+                    .textContentType(textContentType)
+                    .keyboardType(keyboadType)
+                    #endif
                 } else {
-                    if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) {
-                        TextField(
-                            "",
-                            text: $text,
-                            prompt: Text(placeholder)
-                                .foregroundColor(placeholderColor)
-                                .font(font)
-                        )
-                        .onSubmit {
-                            onSubmitAction?()
-                        }
-                        .font(font)
-                        .frame(height: height)
-                        .focused($isFocus)
-                        .background(backgroundView)
-                        .textCase(.lowercase)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
-                        #if canImport(UIKit)
-                        .textContentType(textContentType)
-                        .keyboardType(keyboadType)
-                        #endif
-                    } else {
-                        TextField(placeholder, text: $text)
+                    TextField(
+                        "",
+                        text: $text,
+                        prompt: Text(placeholder)
+                            .foregroundColor(placeholderColor)
                             .font(font)
-                            .frame(height: height)
-                            .background(backgroundView)
-                            #if canImport(UIKit)
-                            .textContentType(textContentType)
-                            .keyboardType(keyboadType)
-                            #endif
+                    )
+                    .onSubmit {
+                        onSubmitAction?()
                     }
+                    .font(font)
+                    .frame(height: height)
+                    .focused($isFocus)
+                    .background(backgroundView)
+                    .textCase(.lowercase)
+                    .autocorrectionDisabled()
+                    .textInputAutocapitalization(.never)
+                    #if canImport(UIKit)
+                    .textContentType(textContentType)
+                    .keyboardType(keyboadType)
+                    #endif
                 }
                 
                 if let trailingImage = trailingImage {
@@ -234,7 +212,7 @@ public struct RasmTextField: View {
             
             if showError {
                 Text(errorMessage ?? "")
-                    .foregroundStyle(errorColor)
+                    .foregroundColor(errorColor)
                     .font(font)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -253,17 +231,11 @@ public struct RasmTextField: View {
 
     @ViewBuilder
     private var borderView: some View {
-        let focusedState = if #available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *) {
-            isFocus
-        } else {
-            false
-        }
-        
         switch style {
         case let .roundedRectangle(cornerRadius, borderColor, borderInActiveColor, borderWidth):
             RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
                 .stroke(
-                    (error && !focusedState && !text.isEmpty) ? errorColor : focusedState ? borderColor : borderInActiveColor,
+                    (error && !isFocus && !text.isEmpty) ? errorColor : isFocus ? borderColor : borderInActiveColor,
                     lineWidth: borderWidth
                 )
                 .frame(height: height)
@@ -271,7 +243,7 @@ public struct RasmTextField: View {
         case let .rectangle(borderColor, borderWidth):
             Rectangle()
                 .stroke(
-                    (error && !focusedState && !text.isEmpty) ? errorColor : borderColor,
+                    (error && !isFocus && !text.isEmpty) ? errorColor : borderColor,
                     lineWidth: borderWidth
                 )
                 .frame(height: height)
@@ -282,7 +254,7 @@ public struct RasmTextField: View {
                 Spacer()
                 Rectangle()
                     .fill(
-                        (error && !focusedState && !text.isEmpty) ? errorColor : borderColor
+                        (error && !isFocus && !text.isEmpty) ? errorColor : borderColor
                     )
                     .frame(height: borderWidth)
             }
