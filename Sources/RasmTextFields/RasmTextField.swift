@@ -19,7 +19,7 @@ public enum TextFieldStyleType {
     case singleLine(borderColor: Color, borderWidth: CGFloat)
 }
 
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+@available(iOS 15.0, *)
 public struct RasmTextField: View {
     @Binding var text: String
     var placeholder: String
@@ -261,7 +261,7 @@ public struct RasmTextField: View {
     }
 }
 
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+@available(iOS 15.0, *)
 #Preview {
     @State var textField1: String = ""
     @State var textField2: String = ""
@@ -326,7 +326,7 @@ public struct RasmTextField: View {
     .padding()
 }
 
-@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+@available(iOS 15.0, *)
 struct FloatingLabelTextField: View {
     @State private var text: String = ""
     @State private var isEditing: Bool = false
