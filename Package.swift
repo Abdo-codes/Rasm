@@ -15,7 +15,7 @@ private var modifierTarget: Target.Dependency  {
 
 let package = Package(
     name: PACKAGE_NAME,
-    platforms: [.iOS(.v15), .macOS(.v11)],
+    platforms: [.iOS(.v15)],
     products: [
         .library(
             name: PACKAGE_NAME,
